@@ -1,0 +1,29 @@
+{
+  "name": "haicommunity",
+  "version": "1.0.0",
+  "description": "patient education and online community for healthcare associated infections",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "export NODE_ENV=test && jasmine",
+    "start": "node src/server.js"
+  },
+  "author": "Sarah Rothwell",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "jasmine": "^3.0.0",
+    "nodemon": "^1.19.1",
+    "request": "^2.88.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.1.0",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2",
+    "express-validator": "^5.3.1",
+    "gravatar": "^1.8.0",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.32.6"
+  }
+}
