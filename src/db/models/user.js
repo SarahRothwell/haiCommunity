@@ -1,0 +1,35 @@
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  var User = sequelize.define('User', {
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isEmail: { msg: "must be a valid email"}
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    role: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    }
+  }, {});
+  User.associate = function(models) {
+
+/*
+    User.hasMany(models.Support, {
+      foreignKey: "supportId",
+      as: "supports"
+    });
+*/
+  };
+  return User;
+};
