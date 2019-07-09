@@ -5,25 +5,40 @@
   "main": "src/server.js",
   "scripts": {
     "test": "export NODE_ENV=test && jasmine",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "server": "nodemon src/server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Sarah Rothwell",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^4.1.0",
+    "faker": "^4.1.0",
     "jasmine": "^3.0.0",
     "nodemon": "^1.19.1",
     "request": "^2.88.0"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "buttercms": "^1.1.5",
     "config": "^3.1.0",
+    "cors": "^2.8.5",
     "dotenv": "^5.0.0",
     "express": "^4.16.2",
+    "express-flash": "0.0.2",
+    "express-session": "^1.16.2",
     "express-validator": "^5.3.1",
     "gravatar": "^1.8.0",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^4.32.6"
+    "redux": "^4.0.1",
+    "sequelize": "^4.32.6",
+    "sequelize-cli": "^4.0.0"
   }
 }

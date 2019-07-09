@@ -19,7 +19,6 @@ module.exports = {
       passwordConfirmation: req.body.passwordConfirmation
     };
 
-
     userQueries.createUser(newUser, (err, user) => {
       if(err){
         res.status(400).send({error: "create user failed"});

@@ -7,8 +7,9 @@ import Landing from './components/Landing';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Blog from './components/resources/Blog';
-import BlogPost from './components/resources/BlogPost'
-import Support from './components/support/Support'
+import BlogPost from './components/resources/BlogPost';
+import Support from './components/support/Support';
+import Alert from './components/Alert';
 //import Register from './components/auth/Register';
 
 //redux
@@ -20,7 +21,9 @@ const App = () => (
     <Router>
       <Fragment>
         <Navbar />
+        <Alert/>
         <Route exact path="/" component={Landing} />
+
         <Switch>
           <Route exact path="/login" component={Login}/>
           <Route exact path="/register" component={Register}/>

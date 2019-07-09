@@ -11,10 +11,10 @@ module.exports = {
 
     const errors = req.validationErrors();
     console.log(errors);
+    //needs to be fixed for alerting user when registration failed
     if (errors) {
-      console.log("there are errors in validation")
-      req.flash("error", errors);
-      return res.redirect(req.headers.referer);
+      return next(errors);
+      //res.status(422).send({error: "does not meet minimal information requirements to set up account"});
     } else {
       return next();
     }

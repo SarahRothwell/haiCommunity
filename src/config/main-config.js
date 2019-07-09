@@ -7,7 +7,7 @@ const expressValidator = require('express-validator');
 const session = require("express-session");
 const flash = require("express-flash");
 const passportConfig = require("./passport-config");
-
+var cors = require("cors");
 
 module.exports = {
   init(app, express){
@@ -18,7 +18,7 @@ module.exports = {
     app.use(express.static(path.join(__dirname, "..", "assets")));
     app.use(logger('dev'));
     app.use(expressValidator())
-
+    app.use(cors());
     app.use(session({
     //  secret: process.env.cookieSecret,
       secret: "do not let this get checked into version control",

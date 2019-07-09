@@ -1,15 +1,12 @@
-const support = require("./models").Support;
+const Support = require("./models").Support;
 
 module.export = {
 
   getAllSupports(callback){
-    return Support.all()
-
-    .then((supports) => {
-      callback(null, supports);
-    })
-    .catch((err) => {
-      callback(err);
+    Support.findAll().then((supports) => {
+      return callback(null, supports);
+    }).catch((err) => {
+      return callback(err);
     })
   }
 }
