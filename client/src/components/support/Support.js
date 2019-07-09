@@ -1,39 +1,54 @@
 import React, { Component } from 'react'
+import './support.css'
 
 class Support extends Component {
   constructor(props){
     super(props);
     this.state = {
-      supports: []
+      supports: [],
+      isloading: false,
     };
   }
-
-//fetch request to get all supports
-  callAPI(){
+//test
+//call api request to get all supports
+componentDidMount(){
+    this.setState({ isloading: true});
     fetch("http://localhost:5000/support")
-      .then(res =>
-        res.json())
-        //something is wrong with line 17**************
-      .then(supports => {
-        this.setState({supports: supports})
+      .then(response => {
+        if(response.ok){
+          return response.json();
+        } else {
+          throw new Error("fetch to support api not working....")
+        }
       })
-      .catch((err) => {
-        console.log(err);
-      })
+      .then(data => this.setState({supports: data.supports, isLoading: false}))
+      .catch(error => this.setState({error, isLoading: false}));
   }
 
-  componentWillMount(){
-    this.callAPI();
-  }
 
   render() {
+
+    const {supports, isLoading} = this.state;
+
+    if(isLoading){
+      return <p>Loading...</p>
+    }
       return (
-        <div className="App">
-          <h1>List of Supports</h1>
-          <div>
-            {this.state.supports.map((support, key) => (
-              <div key={support.id}>{support.name}</div>
+        <div className="container">
+          <h1>Support</h1>
+          <h4>Find physicians and allied health professionals in your area</h4>
+          <div className="support-wrapper">
+
+            {supports.map((support, key) => (
+              <div key={support.id} className="support-item-box">
+                <p className="support-name">{support.name}</p>
+                <p className="support-description">{support.description}</p>
+                <p className="support-phone">Phone Number:{support.phone}</p>
+                <p className="support-website">Website: <a target="_blank" href="{support.website}" >{support.website}</a></p>
+                <p className="support-address">Address: {support.street}, {support.city}, {support.country}</p>
+              </div>
             ))}
+
           </div>
         </div>
       );
