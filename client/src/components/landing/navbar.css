@@ -1,0 +1,17 @@
+.navbar {
+  margin-bottom: 0;
+  border: 0;
+
+}
+
+.navbar li a, .navbar .navbar-brand {
+  color: #000000 !important;
+}
+
+li {
+  padding: 0.5em;
+}
+
+.navbar a:hover {
+  color: var(--primary-color);
+}

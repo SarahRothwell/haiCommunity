@@ -1,12 +1,19 @@
 import React from 'react';
+import LandingImg from "./LandingImg.js";
+import './navbar.css'
 
 const Landing = () => {
 
   return (
     <section className="landing">
       <div className="box-1">
-        <h1 className="title">Canadian Health Care Associated Infections Society</h1>
-        <p className="website-description">Welcome to the website!</p>
+          <div className = "image-box">
+          <LandingImg/>
+          </div>
+          <div>
+            <h1 className="title">Canadian Health Care Associated Infections Society</h1>
+            <p className="website-description">Welcome to the website!</p>
+          </div>
       </div>
 
         <div className="container">

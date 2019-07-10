@@ -36,7 +36,15 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      province: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       country: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      categories: {
         type: Sequelize.STRING,
         allowNull: false
       },
@@ -48,18 +56,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-      /*
-      userId: {
-         type: Sequelize.INTEGER,
-         onDelete: "CASCADE",
-         allowNull: false,
-         references: {
-           model: "Users",
-           key: "id",
-           as: "userId"
-         },
-       }
-       */
 
     });
   },

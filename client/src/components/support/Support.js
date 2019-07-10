@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './support.css'
 
+
 class Support extends Component {
   constructor(props){
     super(props);
@@ -25,6 +26,13 @@ componentDidMount(){
       .catch(error => this.setState({error, isLoading: false}));
   }
 
+  //filter supports based on choice selected in the dropdown menu
+
+  filterSupports(supports, filterItem) {
+
+
+
+  }
 
   render() {
 
@@ -37,6 +45,18 @@ componentDidMount(){
         <div className="container">
           <h1>Support</h1>
           <h4>Find physicians and allied health professionals in your area</h4>
+
+          <div className ="support-search-dr">
+          <div className="dropdown">
+              <button className="dropbtn">Dropdown</button>
+              <div id="myDropdown" className="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+              </div>
+          </div>
+
           <div className="support-wrapper">
 
             {supports.map((support, key) => (
@@ -45,7 +65,7 @@ componentDidMount(){
                 <p className="support-description">{support.description}</p>
                 <p className="support-phone">Phone Number:{support.phone}</p>
                 <p className="support-website">Website: <a target="_blank" href="{support.website}" >{support.website}</a></p>
-                <p className="support-address">Address: {support.street}, {support.city}, {support.country}</p>
+                <p className="support-address">Address: {support.street}, {support.city}, {support.province}, {support.country}</p>
               </div>
             ))}
 

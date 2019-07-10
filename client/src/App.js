@@ -2,8 +2,8 @@ import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //import {Route, Link} from 'react-router-dom';
 import './App.css';
-import Navbar from './components/Navbar';
-import Landing from './components/Landing';
+import NavigationBar from './components/landing/Navbar';
+import Landing from './components/landing/Landing';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Blog from './components/resources/Blog';
@@ -20,8 +20,8 @@ const App = () => (
   <Provider store={store}>
     <Router>
       <Fragment>
-        <Navbar />
-        <Alert/>
+        <NavigationBar />
+
         <Route exact path="/" component={Landing} />
 
         <Switch>

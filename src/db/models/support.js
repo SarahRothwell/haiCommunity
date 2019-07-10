@@ -29,22 +29,21 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    province: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     country: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    categories: {
       type: DataTypes.STRING,
       allowNull: false
     }
   }, {});
   Support.associate = function(models) {
 
-/*
-    Support.belongsTo(models.User, {
-    foreignKey: "userId",
-    });
-*/
-    Support.hasMany(models.Supportcategory, {
-      foreignKey: "SupportcategoryId",
-      as: "Supportcategories"
-    });
 
   };
   return Support;
