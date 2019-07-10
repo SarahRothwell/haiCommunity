@@ -1,5 +1,5 @@
 import React from 'react';
-import landingImage from './landing-background.jpg';
+import landingImage from '../../assets/images/landing-background.jpg';
 console.log(landingImage);
 
 function LandingImg() {

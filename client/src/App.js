@@ -25,11 +25,11 @@ const App = () => (
         <Route exact path="/" component={Landing} />
 
         <Switch>
-          <Route exact path="/login" component={Login}/>
-          <Route exact path="/register" component={Register}/>
-          <Route exact path="/support" component={Support}/>
+          <Route path="/login" component={Login}/>
+          <Route path="/register" component={Register}/>
+          <Route path="/support" component={Support}/>
           //butterCMS routes
-          <Route exact path="/blog" component={Blog}/>
+          <Route path="/blog" component={Blog}/>
           <Route path='/blog/:page' exact component={Blog} />
           <Route path='/blog/posts/:post' component={BlogPost} />
 
