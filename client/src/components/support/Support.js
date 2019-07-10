@@ -45,16 +45,17 @@ componentDidMount(){
         <div className="container">
           <h1>Support</h1>
           <h4>Find physicians and allied health professionals in your area</h4>
-
-          <div className ="support-search-dr">
-          <div className="dropdown">
-              <button className="dropbtn">Dropdown</button>
-              <div id="myDropdown" className="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+          <div className="search-support">
+            <div class="dropdown show">
+              <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Province
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Ontario</a>
+                <a class="dropdown-item" href="#">British Columbia</a>
+                <a class="dropdown-item" href="#">Quebec</a>
               </div>
-              </div>
+            </div>
           </div>
 
           <div className="support-wrapper">

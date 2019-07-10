@@ -1,9 +1,13 @@
 import React from 'react';
-import landingImage from '../../assets/images/landing-background.jpg';
-console.log(landingImage);
 
 function LandingImg() {
-  return <img src={landingImage} alt="landing image"/>;
+  return <img
+    src={require('../../assets/images/landing-background.jpg')}
+    className="img-responsive"
+    alt="Responsive Image"
+    width= "100%"
+    height= "auto"
+    />;
 }
 
 export default LandingImg;
